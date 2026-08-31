@@ -101,6 +101,8 @@ with col1:
     st.image("Sensor.webp", caption="Sensor", width=250)
 with col2:
     st.image("Sensor2.webp", caption="Sensor", width=250)
+with col3:
+    st.image("Rionegro.jpg", caption="Ubicación", width=250)
 
 
 def calcular_indice_calidad(df):
