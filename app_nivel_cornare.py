@@ -32,6 +32,18 @@ CANDIDATOS_LON = ["Lng", "Lon", "Longitude", "Longitud"]
 
 st.set_page_config(page_title="Nivel de la estación Rionegro, Quebrada Yarumal — CORNARE", page_icon="🌊", layout="wide")
 
+# ------------------------------------------------------------------
+# parámetros de la consulta (editables por cada estudiante)
+# ------------------------------------------------------------------
+nombre_estudiante = "Sebastián Villa Hernández"
+codigo_estacion = 5
+fecha_desde = st.date_input("Desde", pd.to_datetime("2026-08-26")).strftime("%Y-%m-%d")
+fecha_hasta = st.date_input("Hasta", pd.to_datetime("2026-08-31")).strftime("%Y-%m-%d")
+calidad = st.selectbox("Calidad", [1, 0], index=0, help="1 = solo datos validados")
+consultar = st.button("🔍 Consultar", type="primary")
+
+st.title("🌊 Nivel de ríos y quebradas de la estación Rionegro, Quebrada Yarumal — CORNARE")
+st.caption(f"Estudiante: **{nombre_estudiante}** · Estación: **{codigo_estacion}**")
 
 # ------------------------------------------------------------------
 # Funciones de consulta
@@ -114,21 +126,6 @@ def calcular_indice_calidad(df):
 
     indice = (completitud * 0.7 + (1 - proporcion_outliers) * 0.3) * 100
     return round(indice, 1), int(huecos), int(es_outlier.sum())
-
-
-# ------------------------------------------------------------------
-# Sidebar — parámetros de la consulta (editables por cada estudiante)
-# ------------------------------------------------------------------
-nombre_estudiante = "Sebastián Villa Hernández"
-codigo_estacion = 5
-fecha_desde = st.date_input("Desde", pd.to_datetime("2026-08-26")).strftime("%Y-%m-%d")
-fecha_hasta = st.date_input("Hasta", pd.to_datetime("2026-08-31")).strftime("%Y-%m-%d")
-calidad = st.selectbox("Calidad", [1, 0], index=0, help="1 = solo datos validados")
-consultar = st.button("🔍 Consultar", type="primary")
-
-st.title("🌊 Nivel de ríos y quebradas de la estación Rionegro, Quebrada Yarumal — CORNARE")
-st.caption(f"Estudiante: **{nombre_estudiante}** · Estación: **{codigo_estacion}**")
-
 
 # ------------------------------------------------------------------
 # Consulta y procesamiento
