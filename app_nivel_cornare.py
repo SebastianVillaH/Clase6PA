@@ -25,10 +25,10 @@ LON_DEFECTO = -75.5901
 
 API_BASE_URL = "https://marco.cornare.gov.co/api/v1/estaciones"
 
-LLAVE_FECHA = "level_date"
-LLAVE_VALOR = "level"
-CANDIDATOS_LAT = ["lat", "latitude", "latitud"]
-CANDIDATOS_LON = ["lng", "lon", "longitude", "longitud"]
+LLAVE_FECHA = "Fecha"
+LLAVE_VALOR = "Nivel"
+CANDIDATOS_LAT = ["Lat", "Latitude", "Latitud"]
+CANDIDATOS_LON = ["Lng", "Lon", "Longitude", "Longitud"]
 
 st.set_page_config(page_title="Nivel de estación — CORNARE", page_icon="🌊", layout="wide")
 
@@ -114,10 +114,10 @@ def calcular_indice_calidad(df):
 # Sidebar — parámetros de la consulta (editables por cada estudiante)
 # ------------------------------------------------------------------
 st.sidebar.header("Parámetros de tu consulta")
-nombre_estudiante = st.sidebar.text_input("Nombre del estudiante", "Tu Nombre Aquí")
-codigo_estacion = st.sidebar.text_input("Código de estación", "42")
-fecha_desde = st.sidebar.date_input("Desde", pd.to_datetime("2026-08-23")).strftime("%Y-%m-%d")
-fecha_hasta = st.sidebar.date_input("Hasta", pd.to_datetime("2026-08-30")).strftime("%Y-%m-%d")
+nombre_estudiante = st.sidebar.text_input("Nombre del estudiante", "Sebastián Villa Hernández")
+codigo_estacion = st.sidebar.text_input("Código de estación", "5")
+fecha_desde = st.sidebar.date_input("Desde", pd.to_datetime("2026-08-26")).strftime("%Y-%m-%d")
+fecha_hasta = st.sidebar.date_input("Hasta", pd.to_datetime("2026-08-31")).strftime("%Y-%m-%d")
 calidad = st.sidebar.selectbox("Calidad", [1, 0], index=0, help="1 = solo datos validados")
 consultar = st.sidebar.button("🔍 Consultar", type="primary")
 
