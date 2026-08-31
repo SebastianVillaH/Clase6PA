@@ -84,6 +84,7 @@ def detectar_coordenadas(datos_json):
     return LAT_DEFECTO, LON_DEFECTO, False
 
 st.image("Sensor.webp", caption="Sensor",width=250)
+st.image("Sensor2.webp", caption="Sensor",width=250)
 
 
 def calcular_indice_calidad(df):
