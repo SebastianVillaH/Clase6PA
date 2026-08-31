@@ -184,4 +184,4 @@ if consultar:
             csv = df.to_csv(index=False).encode("utf-8")
             st.download_button("⬇️ Descargar CSV", csv, file_name=f"nivel_estacion_{codigo_estacion}.csv", mime="text/csv")
 else:
-    st.info("Ajusta los parámetros en el sidebar y presiona **Consultar**.")
+    st.info( "Presiona **Consultar** y accede a la información.")
