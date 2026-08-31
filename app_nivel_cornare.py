@@ -117,7 +117,7 @@ def calcular_indice_calidad(df):
 # Sidebar — parámetros de la consulta (editables por cada estudiante)
 # ------------------------------------------------------------------
 nombre_estudiante = "Sebastián Villa Hernández"
-codigo_estacion = st.selectbox("Código de estación", [5])
+codigo_estacion = 5
 fecha_desde = st.date_input("Desde", pd.to_datetime("2026-08-26")).strftime("%Y-%m-%d")
 fecha_hasta = st.date_input("Hasta", pd.to_datetime("2026-08-31")).strftime("%Y-%m-%d")
 calidad = st.selectbox("Calidad", [1, 0], index=0, help="1 = solo datos validados")
